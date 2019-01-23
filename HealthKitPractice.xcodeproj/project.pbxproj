@@ -14,6 +14,8 @@
 		AF72100C21F6E82900945155 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF72100A21F6E82900945155 /* LaunchScreen.storyboard */; };
 		AF72101721F6E82900945155 /* HealthKitPracticeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72101621F6E82900945155 /* HealthKitPracticeTests.swift */; };
 		AF72102221F6E82900945155 /* HealthKitPracticeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72102121F6E82900945155 /* HealthKitPracticeUITests.swift */; };
+		AF72103121F6ED4000945155 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF72103021F6ED4000945155 /* HealthKit.framework */; };
+		AFE1685721F7FBA500DB89E0 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE1685621F7FBA500DB89E0 /* UIAlertController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,9 @@
 		AF72101D21F6E82900945155 /* HealthKitPracticeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HealthKitPracticeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF72102121F6E82900945155 /* HealthKitPracticeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitPracticeUITests.swift; sourceTree = "<group>"; };
 		AF72102321F6E82900945155 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF72103021F6ED4000945155 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		AF72103221F6ED4000945155 /* HealthKitPractice.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HealthKitPractice.entitlements; sourceTree = "<group>"; };
+		AFE1685621F7FBA500DB89E0 /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF72103121F6ED4000945155 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +87,7 @@
 				AF72101521F6E82900945155 /* HealthKitPracticeTests */,
 				AF72102021F6E82900945155 /* HealthKitPracticeUITests */,
 				AF720FFF21F6E82700945155 /* Products */,
+				AF72102F21F6ED4000945155 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +104,14 @@
 		AF72100021F6E82700945155 /* HealthKitPractice */ = {
 			isa = PBXGroup;
 			children = (
+				AF72103221F6ED4000945155 /* HealthKitPractice.entitlements */,
 				AF72100121F6E82700945155 /* AppDelegate.swift */,
 				AF72100321F6E82700945155 /* ViewController.swift */,
 				AF72100521F6E82700945155 /* Main.storyboard */,
 				AF72100821F6E82900945155 /* Assets.xcassets */,
 				AF72100A21F6E82900945155 /* LaunchScreen.storyboard */,
 				AF72100D21F6E82900945155 /* Info.plist */,
+				AFE1685621F7FBA500DB89E0 /* UIAlertController.swift */,
 			);
 			path = HealthKitPractice;
 			sourceTree = "<group>";
@@ -123,6 +132,14 @@
 				AF72102321F6E82900945155 /* Info.plist */,
 			);
 			path = HealthKitPracticeUITests;
+			sourceTree = "<group>";
+		};
+		AF72102F21F6ED4000945155 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF72103021F6ED4000945155 /* HealthKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +210,11 @@
 				TargetAttributes = {
 					AF720FFD21F6E82700945155 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 					AF72101121F6E82900945155 = {
 						CreatedOnToolsVersion = 10.1;
@@ -257,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF72100421F6E82700945155 /* ViewController.swift in Sources */,
+				AFE1685721F7FBA500DB89E0 /* UIAlertController.swift in Sources */,
 				AF72100221F6E82700945155 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,8 +455,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HealthKitPractice/HealthKitPractice.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3U3H8GE38E;
 				INFOPLIST_FILE = HealthKitPractice/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -449,8 +475,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HealthKitPractice/HealthKitPractice.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3U3H8GE38E;
 				INFOPLIST_FILE = HealthKitPractice/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
